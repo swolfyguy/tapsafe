@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1B2A4A">
+<title>Card not active – TapSafe</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F2A33C'/%3E%3Cpath d='M9 12a6 6 0 0 1 0 8M13 9a10 10 0 0 1 0 14M17 6a14 14 0 0 1 0 20' fill='none' stroke='%231B2A4A' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<!-- Absolute path for hosting (this page is served at any unknown /c/ path); relative one for opening from disk. -->
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="page inactive">
+
+  <header class="id">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#F2A33C"/><path d="M9 12a6 6 0 0 1 0 8M13 9a10 10 0 0 1 0 14M17 6a14 14 0 0 1 0 20" fill="none" stroke="#1B2A4A" stroke-width="2.6" stroke-linecap="round"/></svg>
+      TapSafe
+    </div>
+    <p class="found">This card works, but it isn't linked to a student yet.</p>
+    <h1>Not activated yet</h1>
+  </header>
+
+  <main class="body">
+    <p class="status"><span class="dot"></span><span id="card-label">Unassigned card</span></p>
+    <p><strong>Found this card?</strong> Hand it in at any school office. Staff can look up the card number and return it.</p>
+    <p><strong>From the school?</strong> Activate it in the TapSafe admin by scanning this card and choosing the student. Details appear here the moment you save.</p>
+  </main>
+
+  <footer class="foot">
+    <p class="tagline">Every child, one tap away.</p>
+    <p>Nothing about any child is shown on an unassigned card.</p>
+  </footer>
+
+</div>
+<script>
+  // Show the code from the URL (/c/XXXXXXXX) so office staff can find the card.
+  var m = location.pathname.match(/^\/c\/([A-Za-z0-9]{8})\/?$/);
+  if (m) document.getElementById('card-label').textContent = 'Card ' + m[1] + ' is unassigned';
+</script>
+</body>
+</html>
