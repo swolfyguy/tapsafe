@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1B2A4A">
+<meta name="robots" content="noindex, nofollow">
+<title>TapSafe demo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F2A33C'/%3E%3Cpath d='M9 12a6 6 0 0 1 0 8M13 9a10 10 0 0 1 0 14M17 6a14 14 0 0 1 0 20' fill='none' stroke='%231B2A4A' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="home">
+
+  <div class="brand">
+    <svg class="mark" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#F2A33C"/><path d="M9 12a6 6 0 0 1 0 8M13 9a10 10 0 0 1 0 14M17 6a14 14 0 0 1 0 20" fill="none" stroke="#1B2A4A" stroke-width="2.6" stroke-linecap="round"/></svg>
+    TapSafe
+  </div>
+
+  <h1>Every child, one tap away.</h1>
+  <p class="lede">A school ID card with an NFC chip and a printed QR. Whoever finds a lost card taps it with any phone and sees who to call. Nothing else.</p>
+
+  <h2>Try a sample card</h2>
+  <ul class="samples">
+    <li><a class="sample" href="c/2SOXhptD/index.html"><span class="chip">A</span><span class="txt"><strong>Aarav S.</strong><span>Class 4, Section B</span></span><code>2SOXhptD</code></a></li>
+    <li><a class="sample" href="c/cTAoxjfw/index.html"><span class="chip">M</span><span class="txt"><strong>Meera K.</strong><span>Class 7, Section A</span></span><code>cTAoxjfw</code></a></li>
+    <li><a class="sample" href="c/twxIeSlL/index.html"><span class="chip">Z</span><span class="txt"><strong>Zoya A.</strong><span>Class 2, Section C</span></span><code>twxIeSlL</code></a></li>
+    <li><a class="sample blank" href="c/xxa3OvHZ/index.html"><span class="chip">?</span><span class="txt"><strong>Blank card</strong><span>Printed, not yet assigned to a student</span></span><code>xxa3OvHZ</code></a></li>
+  </ul>
+
+  <footer class="foot">
+    <p class="tagline">Every child, one tap away.</p>
+    <p>Demo menu for school principals. Card pages never link back here; a found card must not lead to other children.</p>
+  </footer>
+
+</div>
+<script>
+  // Opened from disk there is no server to route unknown codes, so show the page directly.
+  if (location.protocol === 'file:') document.querySelector('.sample.blank').href = '404.html';
+</script>
+</body>
+</html>

@@ -5,7 +5,8 @@ Static pages for the TapSafe school ID card. Each card's NFC chip and printed QR
 ## Files
 
 ```
-index.html          demo landing page linking the sample cards
+index.html          public landing page (site root)
+demo.html           demo menu for principals, linking the sample cards
 404.html            "card not yet activated" page, served for any unknown code
 _redirects          Netlify rule: /c/* falls through to 404.html
 assets/style.css    shared styles
@@ -22,3 +23,7 @@ No build step. Deploy the folder as-is.
 To add a card, copy one of the `c/{code}/` folders, rename it to a new random code and edit the details in `index.html`.
 
 Card pages carry `noindex` so search engines never list them.
+
+## Card pages are dead ends
+
+A `/c/{code}` page is opened by a stranger who found the card. It must never link to the demo menu, the site root, or any other child's page. The only links on a card page are `tel:` numbers. The demo menu lives at `/demo.html` for that reason and is reached by typing the URL, not from any card. Keep this rule when `/c/{code}` becomes a live lookup.
