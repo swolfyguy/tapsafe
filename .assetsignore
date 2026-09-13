@@ -1,0 +1,9 @@
+# Files that must not be uploaded as public site assets.
+.git
+.gitignore
+.idea
+.wrangler
+node_modules
+wrangler.jsonc
+README.md
+.assetsignore
