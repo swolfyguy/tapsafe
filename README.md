@@ -19,6 +19,7 @@ No build step. Deploy the folder as-is.
 
 - **Cloudflare Pages**: upload or connect the repo, output directory `/`. Cloudflare serves `404.html` for unknown paths automatically.
 - **Netlify**: drag the folder onto the dashboard. `_redirects` routes unknown `/c/*` codes to the not-activated page.
+- **Vercel**: import the repo, framework preset "Other", no build command, output directory `.`. `vercel.json` turns on clean URLs and adds `noindex` headers on `/c/*`; Vercel serves `404.html` for unknown codes automatically.
 
 To add a card, copy one of the `c/{code}/` folders, rename it to a new random code and edit the details in `index.html`.
 
