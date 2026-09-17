@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tapsafe",
+  "compatibility_date": "2026-09-11",
+  "assets": {
+    "directory": "./",
+    // Serve /404.html (with a real 404 status) for any unknown path, including /c/{unassigned code}.
+    "not_found_handling": "404-page",
+    // /c/2SOXhptD and /c/2SOXhptD/ both resolve to c/2SOXhptD/index.html.
+    "html_handling": "auto-trailing-slash"
+  }
+}

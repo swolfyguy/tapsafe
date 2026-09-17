@@ -8,7 +8,8 @@ Static pages for the TapSafe school ID card. Each card's NFC chip and printed QR
 index.html          public landing page (site root)
 demo.html           demo menu for principals, linking the sample cards
 404.html            "card not yet activated" page, served for any unknown code
-_redirects          Netlify rule: /c/* falls through to 404.html
+wrangler.jsonc      Cloudflare Workers config: static assets, 404.html for unknown paths
+.assetsignore       files kept out of the public upload (config, README, git)
 assets/style.css    shared styles
 c/2SOXhptD/         Aarav S.
 c/cTAoxjfw/         Meera K.
@@ -17,9 +18,11 @@ c/twxIeSlL/         Zoya A.
 
 No build step. Deploy the folder as-is.
 
-- **Cloudflare Pages**: upload or connect the repo, output directory `/`. Cloudflare serves `404.html` for unknown paths automatically.
-- **Netlify**: drag the folder onto the dashboard. `_redirects` routes unknown `/c/*` codes to the not-activated page.
+- **Cloudflare Workers** (current setup): connect the repo in the Cloudflare dashboard with no build command. `wrangler.jsonc` sets `not_found_handling` to `404-page`, so any unknown `/c/{code}` gets `404.html` with a 404 status. Do not add a `_redirects` file with a 404 status code; Workers rejects it and the deploy fails.
+- **Cloudflare Pages**: also works as-is, output directory `/`. Pages serves `404.html` for unknown paths automatically.
 - **Vercel**: import the repo, framework preset "Other", no build command, output directory `.`. `vercel.json` turns on clean URLs and adds `noindex` headers on `/c/*`; Vercel serves `404.html` for unknown codes automatically.
+
+Local preview: `npx wrangler dev --persist-to ../wrangler-state` (keeping state outside the folder stops the dev server reloading itself).
 
 To add a card, copy one of the `c/{code}/` folders, rename it to a new random code and edit the details in `index.html`.
 
